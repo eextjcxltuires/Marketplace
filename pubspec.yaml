@@ -13,6 +13,9 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.2
+  flutter_screenutil: ^5.6.0
+  flutter_svg: ^1.1.6
+  iconsax: ^0.0.8
 
 dev_dependencies:
   flutter_test:
@@ -22,3 +25,16 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/fonts/
+
+  fonts:
+    - family: Dsignes
+      fonts:
+        - asset: assets/fonts/DsignesR.ttf
+        - asset: assets/fonts/DsignesL.ttf
+          weight: 200
+        - asset: assets/fonts/DsignesB.ttf
+          weight: 600
