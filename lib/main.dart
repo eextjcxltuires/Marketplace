@@ -14,16 +14,15 @@ class Marketplace extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       builder: (context, child) {
-        return MaterialApp(
-          title: 'NFT Marketplace',
-          debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-            fontFamily: 'Dsignes',
-            primarySwatch: Colors.blue,
-          ),
-          home: const OnboardingPage(),
-        );
+        // Material Application.
+
+        return application();
       },
     );
   }
+
+  Widget application() => MaterialApp(
+        theme: ThemeData(primarySwatch: Colors.blue),
+        home: const OnboardingPage(),
+      );
 }

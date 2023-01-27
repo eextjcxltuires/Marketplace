@@ -10,7 +10,10 @@ class OnboardingHeader extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: const <Widget>[
+        // Logotype (Text).
         OnboardingLogotype(),
+
+        // Icon.
         OnboardingIconWallet(),
       ],
     );
@@ -24,10 +27,7 @@ class OnboardingLogotype extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       'A.',
-      style: TextStyle(
-        fontSize: 26.r,
-        fontWeight: FontWeight.bold,
-      ),
+      style: TextStyle(fontSize: 26.r, fontWeight: FontWeight.bold),
     );
   }
 }
@@ -40,15 +40,9 @@ class OnboardingIconWallet extends StatelessWidget {
     return Container(
       width: 40.r,
       height: 40.r,
-      decoration: const BoxDecoration(
-        shape: BoxShape.circle,
-        color: Colors.black,
-      ),
+      decoration: const BoxDecoration(shape: BoxShape.circle, color: Colors.black),
       child: const Center(
-        child: Icon(
-          Iconsax.wallet_1,
-          color: Colors.white,
-        ),
+        child: Icon(Iconsax.wallet_1, color: Colors.white),
       ),
     );
   }

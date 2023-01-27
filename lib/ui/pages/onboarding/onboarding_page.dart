@@ -17,15 +17,23 @@ class OnboardingPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             SizedBox(height: 50.h),
+
+            // Header.
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 40.0),
               child: OnboardingHeader(),
             ),
             SizedBox(height: 40.h),
+
+            // Lower Panel.
             const OnboardingLowerPanel(),
             SizedBox(height: 16.h),
+
+            // Welcome Text.
             const OnboardingWelcomeText(),
             SizedBox(height: 24.h),
+
+            // Description Text.
             const OnboardingDescriptionText(),
           ],
         ),

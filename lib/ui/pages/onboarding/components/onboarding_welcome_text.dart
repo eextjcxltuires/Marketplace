@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/animations/fade_animation.dart';
-import '../../../../core/animations/slide_animation.dart';
+import '../../../animations/fade_animation.dart';
+import '../../../animations/slide_animation.dart';
 
 class OnboardingWelcomeText extends StatelessWidget {
   const OnboardingWelcomeText({Key? key}) : super(key: key);
@@ -12,7 +12,10 @@ class OnboardingWelcomeText extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: const <Widget>[
+        // Part Text.
         FirstPartText(),
+
+        // Part Text.
         SecondPartText(),
       ],
     );
@@ -22,12 +25,6 @@ class OnboardingWelcomeText extends StatelessWidget {
 class FirstPartText extends StatelessWidget {
   const FirstPartText({Key? key}) : super(key: key);
 
-  final headingStyle = const TextStyle(
-    fontWeight: FontWeight.w200,
-    fontFamily: 'Dsignes',
-    color: Colors.black,
-  );
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -36,6 +33,8 @@ class FirstPartText extends StatelessWidget {
         intervalEnd: 0.6,
         child: FadeAnimation(
           intervalEnd: 0.6,
+
+          // List (Text).
           child: displayListText(),
         ),
       ),
@@ -45,24 +44,16 @@ class FirstPartText extends StatelessWidget {
   Widget displayListText() => RichText(
         text: TextSpan(
           style: TextStyle(
-            fontSize: 40.r,
-            fontWeight: FontWeight.bold,
             fontFamily: 'Dsignes',
             color: Colors.black,
+            fontSize: 40.r,
+            fontWeight: FontWeight.bold,
             height: 1.3,
           ),
-          children: [
-            TextSpan(
-              text: 'Discover ',
-              style: headingStyle,
-            ),
-            const TextSpan(
-              text: 'Rare \nCollections ',
-            ),
-            TextSpan(
-              text: 'Of ',
-              style: headingStyle,
-            ),
+          children: const [
+            TextSpan(text: 'Discover ', style: TextStyle(fontWeight: FontWeight.w200)),
+            TextSpan(text: 'Rare \nCollections '),
+            TextSpan(text: 'Of ', style: TextStyle(fontWeight: FontWeight.w200)),
           ],
         ),
       );
@@ -82,16 +73,9 @@ class SecondPartText extends StatelessWidget {
           intervalEnd: 0.6,
           child: Row(
             children: <Widget>[
-              Text(
-                'Art & ',
-                style: TextStyle(
-                  fontSize: 40.r,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: 'Dsignes',
-                  color: Colors.black,
-                  height: 1.3,
-                ),
-              ),
+              // Text.
+              displayTextOne(),
+
               const ColoredText(text: 'NFTs.'),
             ],
           ),
@@ -99,6 +83,17 @@ class SecondPartText extends StatelessWidget {
       ),
     );
   }
+
+  Widget displayTextOne() => Text(
+        'Art & ',
+        style: TextStyle(
+          fontSize: 40.r,
+          fontWeight: FontWeight.bold,
+          fontFamily: 'Dsignes',
+          color: Colors.black,
+          height: 1.3,
+        ),
+      );
 }
 
 class ColoredText extends StatelessWidget {
@@ -119,19 +114,17 @@ class ColoredText extends StatelessWidget {
           Positioned(
             bottom: 0,
             left: 10.w,
-            child: Container(
-              width: 85.w,
-              height: 30.r,
-              color: const Color(0xFFAAFAFF),
-            ),
+            child: Container(width: 85.w, height: 30.r, color: const Color(0xFFAAFAFF)),
           ),
-          displayText(),
+
+          // Text.
+          displayTextTwo(),
         ],
       ),
     );
   }
 
-  Widget displayText() => Text(
+  Widget displayTextTwo() => Text(
         text,
         style: TextStyle(
           fontSize: 40.r,

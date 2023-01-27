@@ -4,17 +4,6 @@ import 'package:flutter/material.dart';
 // Using TweenAnimationBuilder.
 
 class SlideAnimation extends StatelessWidget {
-  const SlideAnimation({
-    Key? key,
-    required this.child,
-    this.begin = const Offset(250.0, 0),
-    this.end = const Offset(0, 0),
-    this.intervalStart = 0,
-    this.intervalEnd = 1.0,
-    this.duration = const Duration(milliseconds: 750),
-    this.curve = Curves.fastOutSlowIn,
-  }) : super(key: key);
-
   // Animate from value.
   /// [default value Offset(250,0)]
   final Offset begin;
@@ -42,30 +31,27 @@ class SlideAnimation extends StatelessWidget {
   // This widget, will be animated.
   final Widget child;
 
+  const SlideAnimation({
+    Key? key,
+    required this.child,
+    this.begin = const Offset(250.0, 0),
+    this.end = const Offset(0, 0),
+    this.intervalStart = 0,
+    this.intervalEnd = 1.0,
+    this.duration = const Duration(milliseconds: 750),
+    this.curve = Curves.fastOutSlowIn,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return TweenAnimationBuilder<Offset>(
-      tween: Tween<Offset>(
-        begin: begin,
-        end: end,
-      ),
+      tween: Tween<Offset>(begin: begin, end: end),
+      curve: Interval(intervalStart, intervalEnd, curve: curve),
       duration: duration,
-      curve: Interval(
-        intervalStart,
-        intervalEnd,
-        curve: curve,
-      ),
-      child: child,
-      builder: (
-        BuildContext context,
-        Offset? value,
-        Widget? child,
-      ) {
-        return Transform.translate(
-          offset: value!,
-          child: child,
-        );
+      builder: (BuildContext context, Offset? value, Widget? child) {
+        return Transform.translate(offset: value!, child: child);
       },
+      child: child,
     );
   }
 }
