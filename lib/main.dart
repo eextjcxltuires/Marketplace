@@ -22,7 +22,7 @@ class Marketplace extends StatelessWidget {
   }
 
   Widget application() => MaterialApp(
-        theme: ThemeData(primarySwatch: Colors.blue),
+        theme: ThemeData(fontFamily: 'Dsignes', primarySwatch: Colors.blue),
         home: const OnboardingPage(),
       );
 }

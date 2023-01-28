@@ -8,14 +8,11 @@ class OnboardingDescriptionText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 40.0),
-      child: FadeAnimation(
-        intervalEnd: 0.6,
-        child: Text(
-          'Digital marketplace for crypto-collectibles, and non-fungible tokens NFTS.',
-          style: TextStyle(fontSize: 16.r, fontFamily: 'Dsignes', color: Colors.black),
-        ),
+    return FadeAnimation(
+      intervalEnd: 0.6,
+      child: Text(
+        'Digital marketplace for crypto-collectibles, and non-fungible tokens NFTS.',
+        style: TextStyle(fontSize: 16.r, fontFamily: 'Dsignes', color: Colors.black),
       ),
     );
   }

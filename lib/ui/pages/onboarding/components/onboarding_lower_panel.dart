@@ -9,20 +9,17 @@ class OnboardingLowerPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 40.0),
-      child: FadeAnimation(
-        intervalEnd: 0.4,
-        child: Row(
-          children: <Widget>[
-            // Picture.
-            const LowerPanelPicture(),
-            SizedBox(width: 8.w),
+    return FadeAnimation(
+      intervalEnd: 0.4,
+      child: Row(
+        children: <Widget>[
+          // Picture.
+          const LowerPanelPicture(),
+          SizedBox(width: 8.w),
 
-            // Title Text.
-            const LowerPanelTitle(),
-          ],
-        ),
+          // Title Text.
+          const LowerPanelTitle(),
+        ],
       ),
     );
   }
