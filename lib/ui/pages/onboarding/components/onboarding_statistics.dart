@@ -4,6 +4,7 @@ import 'package:iconsax/iconsax.dart';
 
 import '../../../animations/slide_animation.dart';
 import '../../../animations/fade_animation.dart';
+import '../../home/home_page.dart';
 
 class OnboardingStatistics extends StatelessWidget {
   const OnboardingStatistics({Key? key}) : super(key: key);
@@ -143,13 +144,24 @@ class NextIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 40.r,
-      height: 40.r,
-      decoration: const BoxDecoration(color: Color(0xFFCAB2FF)),
-      child: const Icon(Iconsax.arrow_right_1),
+    return GestureDetector(
+      child: Container(
+        width: 40.r,
+        height: 40.r,
+        decoration: const BoxDecoration(color: Color(0xFFCAB2FF)),
+        child: const Icon(Iconsax.arrow_right_1),
+      ),
+      // Transition.
+
+      onTap: () => home(context),
     );
   }
+
+  // Navigation: The function responsible for navigating to the Home Page.
+  void home(context) => Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const HomePage()),
+      );
 }
 
 class DiscoverArtworkText extends StatelessWidget {
