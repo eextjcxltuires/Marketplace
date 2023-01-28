@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'ui/pages/onboarding/onboarding_page.dart';
 
 void main() {
   runApp(const Marketplace());
@@ -9,8 +12,17 @@ class Marketplace extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(primarySwatch: Colors.blue),
+    return ScreenUtilInit(
+      builder: (context, child) {
+        // Material Application.
+
+        return application();
+      },
     );
   }
+
+  Widget application() => MaterialApp(
+        theme: ThemeData(fontFamily: 'Dsignes', primarySwatch: Colors.blue),
+        home: const OnboardingPage(),
+      );
 }
