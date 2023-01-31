@@ -4,6 +4,7 @@ import 'package:iconsax/iconsax.dart';
 
 import '../../../animations/slide_animation.dart';
 import '../../../animations/fade_animation.dart';
+import '../../../widgets/event_state_widget.dart';
 import '../../home/home_page.dart';
 
 class OnboardingStatistics extends StatelessWidget {
@@ -39,20 +40,20 @@ class DisplayEventState extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: const <Widget>[
-            // Art Work.
-            EventState(
+            // Widget: Art Work.
+            EventStateWidget(
               title: '12.1K+',
               subtitle: 'Art Work',
             ),
 
-            // Artist.
-            EventState(
+            // Widget: Artist.
+            EventStateWidget(
               title: '1.7M+',
               subtitle: 'Artist',
             ),
 
-            // Auction.
-            EventState(
+            // Widget: Auction.
+            EventStateWidget(
               title: '45K+',
               subtitle: 'Auction',
             ),
@@ -61,37 +62,6 @@ class DisplayEventState extends StatelessWidget {
       ),
     );
   }
-}
-
-class EventState extends StatelessWidget {
-  final String title, subtitle;
-
-  const EventState({
-    Key? key,
-    required this.title,
-    required this.subtitle,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(children: <Widget>[
-      // Title.
-      titleText(),
-
-      // Subtitle.
-      subtitleText(),
-    ]);
-  }
-
-  Widget titleText() => Text(
-        title,
-        style: TextStyle(fontSize: 16.r, fontWeight: FontWeight.bold),
-      );
-
-  Widget subtitleText() => Text(
-        subtitle,
-        style: TextStyle(fontSize: 14.r, color: Colors.black54),
-      );
 }
 
 class DiscoverArtWorkBox extends StatelessWidget {

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'components/onboarding_icon_wallet.dart';
 import 'components/onboarding_support_contacts.dart';
 import 'components/onboarding_statistics.dart';
 import 'components/onboarding_description_text.dart';
-import 'components/onboarding_header.dart';
+import '../../widgets/header_widget.dart';
 import 'components/onboarding_welcome_text.dart';
 import 'components/onboarding_lower_panel.dart';
 
@@ -25,7 +26,9 @@ class OnboardingPage extends StatelessWidget {
                 // Header.
                 const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 40.0),
-                  child: OnboardingHeader(),
+                  // Widget: Icon Wallet.
+
+                  child: HeaderWidget(widget: OnboardingIconWallet()),
                 ),
                 SizedBox(height: 40.h),
 
