@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconsax/iconsax.dart';
 
+import '../../../animations/page_transition.dart';
 import '../../../animations/slide_animation.dart';
 import '../../../animations/fade_animation.dart';
 import '../../../widgets/event_state_widget.dart';
@@ -130,7 +131,7 @@ class NextIcon extends StatelessWidget {
   // Navigation: The function responsible for navigating to the Home Page.
   void home(context) => Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const HomePage()),
+        PageTransition(child: const HomePage(), type: PageTransitionType.fadeIn),
       );
 }
 
