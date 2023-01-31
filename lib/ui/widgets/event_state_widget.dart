@@ -15,6 +15,7 @@ class EventStateWidget extends StatelessWidget {
     return Column(children: <Widget>[
       // Title.
       titleText(),
+      SizedBox(height: 8.h),
 
       // Subtitle.
       subtitleText(),
