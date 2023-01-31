@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../animations/page_transition.dart';
 import '../../../animations/slide_animation.dart';
 import '../../../widgets/event_state_widget.dart';
+import '../../detail/detail_page.dart';
 
 class HomeContentList extends StatelessWidget {
   final PageController pageController;
@@ -11,6 +13,12 @@ class HomeContentList extends StatelessWidget {
     Key? key,
     required this.pageController,
   }) : super(key: key);
+
+  // Navigation: The function responsible for navigating to the Detail Page.
+  void detail(context) => Navigator.push(
+        context,
+        PageTransition(child: const DetailPage(), type: PageTransitionType.fadeIn),
+      );
 
   @override
   Widget build(BuildContext context) {
@@ -21,28 +29,31 @@ class HomeContentList extends StatelessWidget {
         child: PageView.builder(
           controller: pageController,
           itemBuilder: (context, index) {
-            return Container(
-              margin: EdgeInsets.fromLTRB(0, 0, 20.w, 0),
-              padding: const EdgeInsets.all(12.0),
-              decoration: BoxDecoration(
-                border: Border.all(width: 1.0, color: Colors.black26),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Padding(
-                    padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 12.0),
-                    child: const ContentHeader(),
-                  ),
-                  Expanded(
-                    child: ContentImage(index: index),
-                  ),
-                  SizedBox(height: 12.h),
-                  Padding(
-                    padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 12.0),
-                    child: const ContentDescription(),
-                  ),
-                ],
+            return GestureDetector(
+              onTap: () => detail(context),
+              child: Container(
+                margin: EdgeInsets.fromLTRB(0, 0, 20.w, 0),
+                padding: const EdgeInsets.all(12.0),
+                decoration: BoxDecoration(
+                  border: Border.all(width: 1.0, color: Colors.black26),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 12.0),
+                      child: const ContentHeader(),
+                    ),
+                    Expanded(
+                      child: ContentImage(index: index),
+                    ),
+                    SizedBox(height: 12.h),
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 12.0),
+                      child: const ContentDescription(),
+                    ),
+                  ],
+                ),
               ),
             );
           },
