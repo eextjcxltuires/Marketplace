@@ -59,6 +59,7 @@ class _HomePageState extends State<HomePage> {
 
             // Content List.
             HomeContentList(pageController: pageController),
+            SizedBox(height: 6.h),
           ],
         ),
       ),
