@@ -1,16 +1,51 @@
 # Marketplace.
 
-A new Flutter project.
+NFTs are trending right now, so why not make an awesome UI for an NFT Marketplace with Flutter?
 
 ## Getting Started.
 
 This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+How do I start it up?
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab).
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook).
+Terminal:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```
+- gh repo clone eextjcxltuires/Marketplace.
+```
+
+IDE VS Code:
+
+```
+file, pubspec.yaml:
+
+- flutter pub get packages.
+```
+
+```
+file, main.dart:
+
+- flutter run.
+```
+
+### Review.
+
+<table>
+  <tr>
+    <td>Anboarding Page.</td>
+  </tr>
+  <tr>
+    <td><img src="assets/result/anboarding-page.png" width=270 height=480></td>
+  </tr>
+ </table>
+
+<table>
+  <tr>
+    <td>Home Page.</td>
+    <td>Detail.</td>
+  </tr>
+  <tr>
+    <td><img src="assets/result/home-page.png" width=270 height=480></td>
+    <td><img src="assets/result/detail-page.png" width=270 height=480></td>
+  </tr>
+ </table>
