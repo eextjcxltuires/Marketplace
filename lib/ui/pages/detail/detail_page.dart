@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:iconsax/iconsax.dart';
+
+import 'components/detail_description_section.dart';
+import 'components/detail_header.dart';
+import 'components/detail_image.dart';
 
 class DetailPage extends StatelessWidget {
   const DetailPage({Key? key}) : super(key: key);
@@ -21,49 +24,15 @@ class DetailPage extends StatelessWidget {
               SizedBox(height: 30.h),
 
               // Image.
-              Container(
-                width: double.infinity,
-                padding: const EdgeInsets.all(12.0),
-                decoration: BoxDecoration(
-                  border: Border.all(width: 1.0, color: Colors.black26),
-                ),
-                child: Hero(
-                  tag: 1,
-                  child: Image.asset(
-                    'assets/images/image-1.jpeg',
-                    height: 260.h,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
+              const DetailImage(),
+              SizedBox(height: 24.h),
+
+              // Description.
+              const DetailDescriptionSection(),
             ],
           ),
         ),
       ),
-    );
-  }
-}
-
-class DetailHeader extends StatelessWidget {
-  const DetailHeader({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: <Widget>[
-        GestureDetector(
-          onTap: () {
-            Navigator.pop(context);
-          },
-          child: const Icon(Icons.arrow_back),
-        ),
-        SizedBox(width: 16.h),
-        Text('Auctions', style: TextStyle(fontSize: 16.r, fontWeight: FontWeight.bold)),
-        const Spacer(),
-        Icon(Iconsax.heart5, color: Colors.red.shade400),
-        SizedBox(width: 15.h),
-        const Icon(Iconsax.menu_1),
-      ],
     );
   }
 }
